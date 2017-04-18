@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poo_1704;
+package ExemploAula;
 
 import java.util.ArrayList;
 
@@ -17,11 +17,19 @@ public class Empresa {
     private String cnpj;
     private ArrayList<Funcionario> funcionarios;
 
+    //Relacionamento 0..*
+    public Empresa(String razaoSocial, String cnpj) {
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.funcionarios = new ArrayList<Funcionario>();
+    }
+    
+    //Relacionamento 1..*
     public Empresa(String razaoSocial, String cnpj, Funcionario funcionario) {
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
         this.funcionarios = new ArrayList<Funcionario>();
-        funcionarios.add(funcionario);
+        contrata(funcionario);
     }
 
     public void contrata(Funcionario funcionario) {
@@ -36,8 +44,8 @@ public class Empresa {
         return cnpj;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
+    public ArrayList<Funcionario> getFuncionario() {
+        return funcionarios;
     }
 
 }

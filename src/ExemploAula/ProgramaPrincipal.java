@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poo_1704;
+package ExemploAula;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -26,12 +28,19 @@ public class ProgramaPrincipal {
         Empresa empresa = new Empresa("E1", "123", funcionario);
         empresa.getRazaoSocial();
         empresa.getCnpj();
-        empresa.getFuncionario();
         empresa.contrata(funcionario2);
         empresa.contrata(funcionario3);
         empresa.contrata(funcionario4);
         empresa.contrata(funcionario5);
         
+        
+        ////////////////////////////////////////////////////////////////////////
+        
+        
+        ArrayList<Funcionario> funcionarios = empresa.getFuncionario();
+        for (Funcionario f : funcionarios) {
+            System.out.println("Nome: " + f.getNome());
+        }
         
     }
 

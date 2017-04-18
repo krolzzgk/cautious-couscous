@@ -3,20 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poo_1704;
+package AtividadeSlides;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author karolina.gkallajian
  */
-public class Funcionario {
+public class Pessoa {
 
     private String nome;
     private String cpf;
-
-    public Funcionario(String nome, String cpf) {
+    private ArrayList<Livro> livros;
+    
+    public Pessoa(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+        this.livros = new ArrayList<>();
     }
 
     public String getNome() {
@@ -26,5 +30,15 @@ public class Funcionario {
     public String getCpf() {
         return cpf;
     }
+    
+    public void adiciona(Livro livro){
+        livros.add(livro);
+    }
+
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
+    
+    
 
 }
